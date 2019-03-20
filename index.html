@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="fb:app_id" content="1657991857848712" />
+  <meta property="og:type" content="game">
+  <meta property="og:title" content="Quick, Draw!" />
+  <meta property="og:url" content="https://quickdraw.withgoogle.com/" />
+  <meta property="og:image" content="https://quickdraw.withgoogle.com/static/shareimg.png" />
+  <meta property="og:description" content="Can a neural network learn to recognize doodles? See how well it does with your drawings and help teach it, just by playing." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@google" />
+  <meta name="twitter:title" content="Quick, Draw!" />
+  <meta name="twitter:description" content="Can a neural network learn to recognize doodles? See how well it does with your drawings and help teach it, just by playing." />
+  <meta name="twitter:image" content="https://quickdraw.withgoogle.com/static/shareimg.png" />
+  <meta itemprop="name" content="Quick, Draw!">
+  <meta itemprop="description" content="Can a neural network learn to recognize doodles? See how well it does with your drawings and help teach it, just by playing.">
+  <meta itemprop="image" content="/static/shareimg.png">
+  <meta property="edition" content="">
+  
+  <title>Drawing</title> 
+
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/libs.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Karla:700,400|Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/flipclock.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/libs.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/flipclock.js"></script>
+  <script src='js/paper-0.9.25.min.js'></script>
+  <script src='js/highcharts-5.0.4.min.js'></script>
+  <script src="js/drawing.js"></script>
+
+ 
+  <style>
+    body {
+      opacity: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+ 
+  <div class="text-center got-window clock" style="margin:2em;"></div>
+
+  <div id="wrapper">
+    <canvas id="canvas" resize></canvas>
+    <div id="plot">
+      <div class="text-right message"></div>
+    </div>
+  </div>
+  <button class="w3-btn w3-ripple w3-blue" id="btnClear" onclick="clearDrawing()">clear</button>
+  <button class="w3-btn w3-ripple w3-blue" id="btnInfo">x</button>
+  <div id="info" class="modal">
+    <div class="text-center got-window">
+      <div class="text-center messageout"></div>
+      <div class="text-center type best-guess-word">potato</div>
+      <div class="text-center time">in under 20 seconds</div>
+      <div class="startingbtn "><span class="close got-btn"><button class="start">Got it!</button></span></div>
+      <div class="checkingbtn"><span class="close got-btn"><button class="checking"><a class="checkn" href=" "></a></button></span></div>
+    </div>
+  </div>
+
+    <div class="popup-wrapper hidden" id="popup-quit" style="">
+      <div class="popup-box">
+        <div class="popup-text"><span class="font-hand-2">A</span><span class="font-hand-2">r</span><span class="font-hand-1">e</span><span class="font-hand-1"> </span><span class="font-hand-2">y</span><span class="font-hand-1">o</span><span class="font-hand-2">u</span><span class="font-hand-2"> </span><span class="font-hand-3">s</span><span class="font-hand-3">u</span><span class="font-hand-1">r</span><span class="font-hand-3">e</span><span class="font-hand-3"> </span><span class="font-hand-2">y</span><span class="font-hand-3">o</span><span class="font-hand-1">u</span><span class="font-hand-3"> </span><span class="font-hand-1">w</span><span class="font-hand-1">a</span><span class="font-hand-3">n</span><span class="font-hand-2">t</span><span class="font-hand-1"> </span><span class="font-hand-1">t</span><span class="font-hand-1">o</span><span class="font-hand-1"> </span><span class="font-hand-1">q</span><span class="font-hand-1">u</span><span class="font-hand-3">i</span><span class="font-hand-3">t</span><span class="font-hand-1">?</span></div>
+        <div class="popup-buttons">
+          <button class="button button-large button-yellow" id="popup-quit-cancel"><span class="center">Cancel</span></button>
+          <button class="button button-large button-yellow" id="popup-quit-quit"><span class="center">Quit</span></button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
